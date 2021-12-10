@@ -1,18 +1,18 @@
-#include "openadress.h"
-#include "ui_openadress.h"
+#include "openartical.h"
+#include "ui_openartical.h"
 
-OpenAdress::OpenAdress(QWidget *parent) :
+OpenArtical::OpenArtical(QWidget *parent) :
     QDialog(parent),
-    ui(new Ui::OpenAdress)
+    ui(new Ui::OpenArtical)
 {
     ui->setupUi(this);
 }
 
-void OpenAdress::set_List()
+void OpenArtical::set_List()
 {
-    ui->List_AddressList->clear();
+    ui->List_Artical->clear();
 
-    QDir dir("D:\\datastructure");
+    QDir dir("D:\\GitHub\\qtpro\\text");
     dir.setFilter(QDir::Dirs | QDir::Files | QDir::NoDotAndDotDot);
     QFileInfoList list = dir.entryInfoList();
 
@@ -21,11 +21,11 @@ void OpenAdress::set_List()
     for (int i=0; i<list.size(); i++){
         QString filename = list.at(i).fileName();
         filename = filename.left(filename.size()-4);
-        ui->List_AddressList->addItem(filename);
+        ui->List_Artical->addItem(filename);
     }
 }
 
-OpenAdress::~OpenAdress()
+OpenArtical::~OpenArtical()
 {
     delete ui;
 }

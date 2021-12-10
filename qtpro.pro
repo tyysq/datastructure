@@ -26,20 +26,26 @@ CONFIG += c++11
 
 SOURCES += \
         address.cpp \
+        changeinfopage.cpp \
         hashmap.cpp \
         main.cpp \
         mainwindow.cpp \
-        openadress.cpp
+        openadress.cpp \
+        openartical.cpp
 
 HEADERS += \
         address.h \
+        changeinfopage.h \
         hashmap.h \
         mainwindow.h \
-        openadress.h
+        openadress.h \
+        openartical.h
 
 FORMS += \
+        changeinfopage.ui \
         mainwindow.ui \
-        openadress.ui
+        openadress.ui \
+        openartical.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -47,4 +53,4 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 DISTFILES += \
-    ../datastructure/dataforphone.txt
+    ../Data_structure-main/addressbook/files.txt
